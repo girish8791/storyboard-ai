@@ -2,6 +2,8 @@
 
 A visual storyboard planning application with AI image generation, featuring an infinite canvas with drag-and-drop positioning for frames, sticky notes, custom images, text titles, and shape boxes.
 
+**Built with [Pollinations.ai](https://pollinations.ai)** 🤖
+
 ![StoryBoard AI](./screenshot.png)
 
 ## Features
