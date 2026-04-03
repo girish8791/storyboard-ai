@@ -1,0 +1,104 @@
+:root {
+  --color-primary: #0D1117;
+  --color-secondary: #161B22;
+  --color-tertiary: #21262D;
+  --color-accent: #58A6FF;
+  --color-accent-secondary: #F78166;
+  --color-accent-success: #3FB950;
+  --color-text-primary: #F0F6FC;
+  --color-text-secondary: #8B949E;
+  --color-text-muted: #6E7681;
+  --color-border: #30363D;
+  
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  
+  --radius-s: 4px;
+  --radius-m: 6px;
+  --radius-l: 8px;
+  
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --transition-fast: 150ms ease-out;
+  
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background-color: var(--color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input, textarea {
+  background: var(--color-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
+  color: var(--color-text-primary);
+  padding: var(--spacing-s) var(--spacing-m);
+  transition: border-color var(--transition-fast);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}

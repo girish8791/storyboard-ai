@@ -1,0 +1,166 @@
+.canvasContainer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-primary);
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.grid {
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  width: 20000px;
+  height: 20000px;
+  background-image: 
+    radial-gradient(circle, var(--color-tertiary) 1px, transparent 1px),
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 20px 20px, 100px 100px, 100px 100px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.framesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.05s ease-out;
+}
+
+.frameWrapper {
+  position: absolute;
+  transition: box-shadow 0.2s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.frameWrapper:hover {
+  z-index: 10;
+}
+
+.frameWrapper.dragging {
+  z-index: 100;
+}
+
+.frameWrapper > * {
+  pointer-events: auto;
+}
+
+.itemWrapper {
+  position: absolute;
+  pointer-events: none;
+}
+
+.itemWrapper > * {
+  pointer-events: auto;
+}
+
+.projectTitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.titleInput {
+  font-size: 48px;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-text-primary);
+  outline: none;
+  min-width: 400px;
+}
+
+.titleText {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.frameWrapper::after {
+  content: '⋮⋮';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.frameWrapper:hover::after {
+  opacity: 0.5;
+}
+
+.emptyState {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-m);
+  text-align: center;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.emptyIcon {
+  font-size: 64px;
+  opacity: 0.5;
+}
+
+.emptyState h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.emptyState p {
+  font-size: 14px;
+  max-width: 300px;
+}
+
+.emptyState .hint {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.instructions {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+  background: rgba(22, 27, 34, 0.9);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.instructions span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
