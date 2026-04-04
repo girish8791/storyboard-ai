@@ -4,7 +4,7 @@ A visual storyboard planning application with AI image generation, featuring an 
 
 **Built with [Pollinations.ai](https://pollinations.ai)** 🤖
 
-![StoryBoard AI](./screenshot.png)
+![StoryBoard AI](screenshot.png)
 
 ## Features
 
@@ -15,8 +15,8 @@ A visual storyboard planning application with AI image generation, featuring an 
 
 ### 🤖 AI Image Generation
 - **Pollinations AI** - Generate images from text prompts using Flux model
-- **Auto-Save** - Images can auto-save to a selected folder on your computer
-- **Revision History** - All generated images are stored locally
+- **Revision History** - All generated images are stored with prompt history
+- **Auto-Save** - Images saved to localStorage
 
 ### 📦 Items You Can Add
 
@@ -29,11 +29,15 @@ A visual storyboard planning application with AI image generation, featuring an 
 | **Boxes** | Rectangle shapes with customizable fill, opacity & borders |
 
 ### 💾 Data Management
-- **Auto-Save** - Work is automatically saved to localStorage
+- **Auto-Save** - Work automatically saved to localStorage
 - **Export JSON** - Save entire storyboard to file
 - **Import JSON** - Load existing storyboards
 
 ## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
 
 ### Installation
 
@@ -77,9 +81,8 @@ npm run build
 - **🔍 Scroll** - Zoom in/out  
 - **📦 Drag items** - Move any item on canvas
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
-- `Ctrl+Shift+N` - Add new frame (when focused)
 - `Delete` - Delete selected item
 - `Ctrl+S` - Export JSON
 - Arrow Keys - Pan canvas
@@ -90,7 +93,7 @@ npm run build
 - Vite
 - Zustand (state management with persist)
 - CSS Modules
-- Pollinations AI API (Flux model)
+- [Pollinations AI API](https://pollinations.ai) (Flux model)
 
 ## API Configuration
 
@@ -98,9 +101,13 @@ The app comes pre-configured with a Pollinations API key. You can change it in S
 
 To get your own API key:
 1. Visit [https://pollinations.ai](https://pollinations.ai)
-2. Create an account
+2. Create an account at [enter.pollinations.ai](https://enter.pollinations.ai)
 3. Get your API key from your profile
 
 ## License
 
 MIT
+
+---
+
+<p align="center">Built with 🤖 using <a href="https://pollinations.ai">Pollinations.ai</a></p>
