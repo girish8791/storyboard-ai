@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react';
-import { inject } from '@vercel/analytics';
+import { Analytics } from '@vercel/analytics/react';
 import { useStore } from './stores/useStore';
 import Header from './components/Header/Header';
 import Toolbar from './components/Toolbar/Toolbar';
@@ -7,8 +7,6 @@ import Canvas from './components/Canvas/Canvas';
 import SidePanel from './components/SidePanel/SidePanel';
 import DiagnosticConsole from './components/DiagnosticConsole/DiagnosticConsole';
 import styles from './App.module.css';
-
-inject();
 
 function App() {
   const { 
@@ -72,6 +70,7 @@ function App() {
         <SidePanel />
       </div>
       <DiagnosticConsole />
+      <Analytics />
     </div>
   );
 }
