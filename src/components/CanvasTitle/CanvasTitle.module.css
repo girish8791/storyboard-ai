@@ -1,0 +1,97 @@
+.container {
+  position: absolute;
+  cursor: move;
+  z-index: 5;
+  padding: 4px;
+}
+
+.container:hover {
+  z-index: 10;
+}
+
+.container.selected {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 4px;
+}
+
+.container.dragging {
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.text {
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.textInput {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-accent);
+  outline: none;
+  font-weight: 700;
+  min-width: 100px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--color-secondary);
+  border-radius: var(--radius-m);
+  border: 1px solid var(--color-border);
+}
+
+.deleteBtn {
+  background: var(--color-accent-secondary);
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn:hover {
+  background: #d64545;
+}
+
+.sizeControl,
+.colorControl {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sizeControl label,
+.colorControl label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.sizeInput {
+  width: 50px;
+  padding: 4px;
+  background: var(--color-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
+  color: var(--color-text-primary);
+  font-size: 12px;
+}
+
+.colorInput {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+}

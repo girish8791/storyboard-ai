@@ -1,0 +1,179 @@
+.card {
+  width: 280px;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  cursor: grab;
+  transition: all var(--transition-fast);
+  pointer-events: auto;
+}
+
+.card:hover {
+  border-color: var(--color-text-muted);
+}
+
+.card.selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.3);
+}
+
+.card.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+  padding: var(--spacing-m);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.frameNumber {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-accent);
+  background-color: rgba(88, 166, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: var(--radius-s);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.imageArea {
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageArea.generating {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image.loaded {
+  opacity: 1;
+}
+
+.revisionCount {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  background-color: rgba(13, 17, 23, 0.85);
+  color: var(--color-text-primary);
+  padding: 2px 6px;
+  border-radius: var(--radius-s);
+}
+
+.imageLoading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-tertiary);
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.generatingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-s);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text-muted);
+}
+
+.placeholder svg {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+.placeholder span {
+  font-size: 12px;
+}
+
+.generateBtn {
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-m);
+  background-color: var(--color-accent-success);
+  color: var(--color-primary);
+  border-radius: var(--radius-m);
+  font-size: 12px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.generateBtn:hover {
+  background-color: #4ec95f;
+}
+
+.description {
+  padding: var(--spacing-m);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
